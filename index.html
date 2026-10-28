@@ -1,0 +1,276 @@
+<!-- maaf kak saya terpaksa vibe coding karena waktu mepet di karenakan ada kesibukan tugas dan ujian praktek tetapi saya berusaha memahami apa yang saya buat dari html sama java script dan men design ui/ux dengan maksimal -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMobil — Showroom Mobil Premium & Penawaran Terbaik</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="shortcut icon" type="image/png" href="img/logo.png">
+    <link rel="apple-touch-icon" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner container">
+            <a href="#beranda" class="logo" aria-label="Beranda MyMobil">
+                <img src="img/logo.png" alt="MyMobil Logo" class="logo-img" width="120" height="42">
+                <span class="logo-text">MyMobil</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Navigasi Utama">
+                <a href="#katalog" class="nav-item">Katalog Mobil</a>
+                <a href="#promo" class="nav-item">Program Promo</a>
+                <a href="#tentang" class="nav-item">Tentang Showroom</a>
+                <a href="#kontak" class="nav-item">Hubungi Kami</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/6281234567890?text=Halo%20MyMobil%2C%20saya%20ingin%20berkonsultasi%20mengenai%20unit%20mobil"
+                    target="_blank" rel="noopener noreferrer" class="btn-header-wa">Customer Service</a>
+                <button class="menu-toggle-btn" onclick="toggleMenu()" aria-label="Buka menu navigasi"
+                    aria-expanded="false" id="menuToggleBtn">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="mainContent">
+
+        <section class="hero-banner-section" id="beranda">
+            <div class="container">
+                <div class="hero-intro">
+                    <h1 class="hero-title">Temukan Mobil Impian Bersama MyMobil</h1>
+                    <p class="hero-subtitle">Koleksi kendaraan premium pilihan dengan jaminan kualitas tertinggi dan
+                        penawaran transparan</p>
+                </div>
+
+                <div class="promo-hero-card" id="promo">
+                    <div class="promo-hero-content">
+                        <div class="promo-hero-badge">Flagship Performance EV</div>
+                        <h2 class="promo-hero-heading">Penawaran Eksklusif Pembelian Unit Pilihan</h2>
+
+                        <div class="promo-benefits-grid">
+                            <div class="benefit-box">
+                                <span class="benefit-label">Bunga Ringan</span>
+                                <span class="benefit-val">0%*</span>
+                                <span class="benefit-sub">selama 1 tahun pertama</span>
+                            </div>
+                            <div class="benefit-box">
+                                <span class="benefit-label">Cash Bertahap</span>
+                                <span class="benefit-val">2 Tahun*</span>
+                                <span class="benefit-sub">hingga 24 bulan</span>
+                            </div>
+                            <div class="benefit-box">
+                                <span class="benefit-label">DP Ringan</span>
+                                <span class="benefit-val">10%*</span>
+                                <span class="benefit-sub">mulai dari 10%</span>
+                            </div>
+                            <div class="benefit-box">
+                                <span class="benefit-label">Benefit Tambahan</span>
+                                <span class="benefit-val">Rp 1 Juta*</span>
+                                <span class="benefit-sub">voucher servis & coating</span>
+                            </div>
+                        </div>
+
+                        <div class="promo-hero-actions">
+                            <a href="#katalog" class="btn-primary">Lihat Seluruh Koleksi</a>
+                            <a href="https://wa.me/6281234567890?text=Halo%20MyMobil%2C%20saya%20tertarik%20dengan%20Penawaran%20Eksklusif%20Pembelian%20Unit%20Pilihan"
+                                target="_blank" rel="noopener noreferrer" class="btn-secondary">Konsultasi Promo
+                                Eksklusif</a>
+                        </div>
+                        <p class="promo-term-text">*Periode 25 – 30 Oktober 2026. Syarat dan ketentuan berlaku.</p>
+                    </div>
+
+                    <div class="promo-hero-visual" aria-hidden="true">
+                        <div class="promo-car-spotlight">
+                            <span class="promo-car-tag">Unit Pilihan &middot; BYD Seal Performance AWD</span>
+                            <img src="img/byd-seal-blue.png" alt="BYD Seal Performance AWD" class="promo-hero-car-img"
+                                width="640" height="360">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="katalog-section" id="katalog">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Koleksi Kendaraan Unggulan</h2>
+                    <p class="section-subtitle">Pilihan lengkap mobil baru dan siap jalan dengan spesifikasi resmi serta
+                        garansi terverifikasi.</p>
+                </div>
+
+                <div class="katalog-controls">
+                    <div class="search-wrapper">
+                        <input type="search" id="searchInput" class="search-input"
+                            placeholder="Cari model mobil atau merek (contoh: BYD, Fortuner, CR-V, Civic, Innova)..."
+                            aria-label="Cari mobil berdasarkan nama atau brand" oninput="cariMobil(this.value)">
+                    </div>
+
+                    <div class="tabs-container" role="tablist" aria-label="Filter Bahan Bakar">
+                        <button class="tab-pill active" role="tab" aria-selected="true"
+                            onclick="filterKategori('semua', event)">Semua Koleksi</button>
+                        <button class="tab-pill" role="tab" aria-selected="false"
+                            onclick="filterKategori('Listrik', event)">Listrik (EV)</button>
+                        <button class="tab-pill" role="tab" aria-selected="false"
+                            onclick="filterKategori('Hybrid', event)">Hybrid</button>
+                        <button class="tab-pill" role="tab" aria-selected="false"
+                            onclick="filterKategori('Bensin', event)">Bensin</button>
+                        <button class="tab-pill" role="tab" aria-selected="false"
+                            onclick="filterKategori('Diesel', event)">Diesel</button>
+                    </div>
+                </div>
+
+                <div class="catalog-status-bar">
+                    <span class="car-count-info" id="carCountInfo">Memuat daftar kendaraan...</span>
+                    <span class="api-source-badge">Unit Siap Kirim</span>
+                </div>
+
+                <div class="car-grid" id="carGrid" aria-live="polite">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="tentang-section" id="tentang">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Standar Showroom MyMobil</h2>
+                    <p class="section-subtitle">Komitmen kami menghadirkan transparansi, kenyamanan, dan rasa tenang
+                        dalam setiap transaksi.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3 class="service-title">100 Titik Inspeksi Mandiri</h3>
+                        <p class="service-text">Setiap kendaraan melewati evaluasi mendalam pada sistem transmisi,
+                            kondisi baterai elektrik, suspensi, dan kelistrikan untuk menjamin kondisi istimewa.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">Transparansi Harga On-The-Road</h3>
+                        <p class="service-text">Harga yang tertera merupakan nilai riil tanpa biaya siluman. Kami
+                            menyediakan simulasi angsuran yang jujur dengan skema bunga bersahabat.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">Jaminan Layanan Purna Jual</h3>
+                        <p class="service-text">Didukung jaminan garansi resmi, kemudahan perawatan berkala, serta
+                            layanan pendampingan dokumen surat kendaraan yang cepat dan aman.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="kontak-section" id="kontak">
+            <div class="container">
+                <div class="kontak-card">
+                    <div class="kontak-info">
+                        <h2>Hubungi Konsultan MyMobil</h2>
+                        <p class="kontak-desc">Konsultasikan kebutuhan varian kendaraan, simulasi skema pembiayaan, atau
+                            jadwalkan sesi test drive langsung ke tempat Anda.</p>
+
+                        <div class="kontak-points">
+                            <div class="point-group">
+                                <strong>Alamat Showroom Utama</strong>
+                                <p>Jl. Isekai No. 1</p>
+                            </div>
+                            <div class="point-group">
+                                <strong>Layanan Respons Cepat</strong>
+                                <p>Telepon: -</p>
+                                <p>WhatsApp: -</p>
+                            </div>
+                            <div class="point-group">
+                                <strong>Jam Operasional</strong>
+                                <p>Senin – Sabtu: 08:00 – 17:00</p>
+                                <p>Minggu: 09:00 – 15:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kontak-action-box">
+                        <h3>Konsultasi & Uji Kemudi</h3>
+                        <p>Dapatkan penawaran harga terbaik dan pelayanan profesional dari konsultan otomotif
+                            berpengalaman kami.</p>
+                        <a href="https://wa.me/6281234567890?text=Halo%20MyMobil%2C%20saya%20ingin%20jadwalkan%20test%20drive%20dan%20konsultasi%20unit"
+                            target="_blank" rel="noopener noreferrer" class="btn-whatsapp-large">Konsultasi via
+                            WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo-row">
+                    <img src="img/logo-white.png" alt="MyMobil Logo" class="footer-logo-img" width="120" height="42">
+                    <span class="footer-logo-text">MyMobil</span>
+                </div>
+                <p class="footer-desc">Pusat Showroom Kendaraan Baru & Pilihan Terpercaya Indonesia</p>
+            </div>
+            <p class="footer-legal">&copy; 2026 MyMobil Indonesia. Seluruh hak cipta dilindungi Andhika wkwk.</p>
+        </div>
+    </footer>
+
+    <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
+        <button class="mobile-nav-close" onclick="toggleMenu()" aria-label="Tutup menu navigasi">Tutup</button>
+        <a href="#beranda" onclick="toggleMenu()">Beranda</a>
+        <a href="#katalog" onclick="toggleMenu()">Katalog Mobil</a>
+        <a href="#promo" onclick="toggleMenu()">Program Promo</a>
+        <a href="#tentang" onclick="toggleMenu()">Tentang Showroom</a>
+        <a href="#kontak" onclick="toggleMenu()">Hubungi Kami</a>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalNama"
+        aria-hidden="true">
+        <div class="modal-box">
+            <button class="modal-close" onclick="tutupModal()" aria-label="Tutup jendela informasi">Tutup</button>
+
+            <div class="modal-image-wrapper">
+                <img src="" alt="Foto Unit Mobil" id="modalImg" class="modal-car-img" width="400" height="220">
+            </div>
+
+            <div class="modal-brand-tag" id="modalBrand">BRAND</div>
+            <h3 id="modalNama" class="modal-title car-title">Nama Mobil</h3>
+            <p id="modalHarga" class="modal-price">Harga OTR</p>
+
+            <div class="modal-spec-grid">
+                <div class="modal-spec-item">
+                    <span class="spec-label">Tahun</span>
+                    <strong id="modalTahun" class="spec-val">2024</strong>
+                </div>
+                <div class="modal-spec-item">
+                    <span class="spec-label">Transmisi</span>
+                    <strong id="modalTransmisi" class="spec-val">Matic</strong>
+                </div>
+                <div class="modal-spec-item">
+                    <span class="spec-label">Bahan Bakar</span>
+                    <strong id="modalBahan" class="spec-val">Bensin</strong>
+                </div>
+                <div class="modal-spec-item">
+                    <span class="spec-label">Jaminan Unit</span>
+                    <strong id="modalStatus" class="spec-val">Garansi Resmi</strong>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <a id="modalWA" href="#" target="_blank" rel="noopener noreferrer" class="btn-action btn-wa">Konsultasi
+                    WhatsApp</a>
+                <button type="button" class="btn-action btn-quote" onclick="mintaBrosur()">Get Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
